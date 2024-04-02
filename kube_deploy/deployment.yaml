@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: railsapp-deployment
+  labels:
+    app: railsapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: railsapp
+  template:
+    metadata:
+      labels:
+        app: railsapp
+    spec:
+        containers:
+          - name: railsapp
+            image: docker.io/nivisco88/rails_app
+            ports:
+                - containerPort: 3000

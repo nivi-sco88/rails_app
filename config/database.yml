@@ -20,7 +20,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
   password: admin1
-  host: postgres_db
+  host: host.docker.internal
+  port: 8080
 
 development:
   <<: *default

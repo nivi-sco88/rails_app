@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres-host
+spec:
+  type: ExternalName
+  externalName: host.docker.internal
+  ports:
+    - port: 8080
